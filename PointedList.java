@@ -1,6 +1,6 @@
 public class PointedList {
 	
-	static private Member first;
+	 private Member first;
 	
 	static class Member {
 		private String value;
@@ -30,7 +30,7 @@ public class PointedList {
 	void printLinkedMemberList (Member member) {
 		while (member != null) {
 			System.out.println(member.value + " -> " + 
-						((member.next != null) ? member.next.value : "null"));
+						(member.next != null ? member.next.value : "null"));
 			member = member.next;
 		}
 	}
@@ -44,11 +44,11 @@ public class PointedList {
 		list.first.next.next.next = new Member("zz");
 		
 		System.out.println("List in order:");
-		list.printLinkedMemberList(first);
+		list.printLinkedMemberList(list.first);
 		System.out.println();
-		first = list.reversePointer(first);
+		list.first = list.reversePointer(list.first);
 		System.out.println("List in reverse order:");
-		list.printLinkedMemberList(first);
+		list.printLinkedMemberList(list.first);
 		
 		
 	}
